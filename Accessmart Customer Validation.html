@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessmart Customer Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f6fa; color: #222; }
+    header { background: #05445E; color: white; padding: 20px; text-align: center; }
+    header h1 { margin: 0; }
+    section { max-width: 900px; margin: auto; padding: 40px 20px; }
+    h2 { color: #05445E; margin-bottom: 20px; }
+    p { font-size: 1.1em; line-height: 1.6; }
+    .chart-container { width: 100%; max-width: 700px; margin: 30px auto; }
+    canvas { width: 100% !important; height: auto !important; }
+    .waitlist { background: #fff; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+    footer { background: #05445E; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    .highlight { font-weight: bold; color: #189AB4; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Accessmart Customer Validation</h1>
+    <p>Supporting Nigerian Entrepreneurs with AI-powered Business Solutions</p>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p>
+      Since 2018, Accessmart Solutions has supported <span class="highlight">120+ SMEs</span> in Nigeria 
+      with IT services, branding, and digital transformation. To validate our SaaS platform concept, we 
+      conducted SME surveys and launched an early waitlist for adoption.
+    </p>
+  </section>
+
+  <section>
+    <h2>Survey Results</h2>
+    <p>We surveyed 50 SMEs across Lagos, Abuja, and Port Harcourt. Here’s what we found:</p>
+    <div class="chart-container">
+      <canvas id="chart1"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="chart2"></canvas>
+    </div>
+  </section>
+
+  <section>
+    <h2>Waitlist Snapshot</h2>
+    <div class="waitlist">
+      <p>We opened a waitlist for early adopters in July 2025. Within 3 weeks:</p>
+      <ul>
+        <li><span class="highlight">40 SMEs</span> signed up across retail, logistics, and services.</li>
+        <li><span class="highlight">70%</span> confirmed willingness to pay after trial.</li>
+        <li>Industries: Retail (35%), Logistics (25%), Services (40%).</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Accessmart Solutions | Contact: info@accessmart.com.ng | 
+    <a href="https://accessmart.com.ng" style="color:white;">Website</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['Manual Workflows', 'High Costs', 'Willing to Adopt SaaS'],
+        datasets: [{
+          label: '% of SMEs',
+          data: [70, 65, 68],
+          backgroundColor: ['#189AB4','#75E6DA','#05445E']
+        }]
+      },
+      options: { responsive: true, plugins: { legend: { display: false } } }
+    });
+
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Retail', 'Logistics', 'Services'],
+        datasets: [{
+          label: 'Waitlist Industries',
+          data: [35, 25, 40],
+          backgroundColor: ['#189AB4','#75E6DA','#05445E']
+        }]
+      },
+      options: { responsive: true }
+    });
+  </script>
+</body>
+</html>
